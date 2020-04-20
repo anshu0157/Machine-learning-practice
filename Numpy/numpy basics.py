@@ -169,9 +169,6 @@ print(np.log2(a))
 np.log10(a)
 
 
-# In[208]:
-
-
 #np.power
 np.power(a,np.array([1,2,3,4,5]))# for power (https://docs.scipy.org/doc/numpy/reference/generated/numpy.power.html)
 
