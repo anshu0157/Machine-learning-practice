@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
 
 # # NUMPY MODULE
 
@@ -176,4 +174,5 @@ np.log10(a)
 
 #np.power
 np.power(a,np.array([1,2,3,4,5]))# for power (https://docs.scipy.org/doc/numpy/reference/generated/numpy.power.html)
+
 
