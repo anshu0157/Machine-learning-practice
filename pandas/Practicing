@@ -1,0 +1,23 @@
+import numpy as np
+import pandas as pd 
+import matplotlib.pyplot as plt
+
+df=pd.read_csv('AllstarFull.csv')
+Describe=df.describe()
+#df.info()
+datatypes=df.dtypes
+head=df.head(10)
+tail=df.tail(10)
+k=df['GP'].max()
+count=df[df['startingPos'].isin([np.nan])] #finding null value
+known_value=df[df['startingPos'].notna()] #finding not null value
+not_known_val=df[df['startingPos'].isna()] #finding null value
+
+'''When selecting subsets of data, square brackets [] are used.
+Inside these brackets, you can use a single column/row label, a list of column/row labels, a slice of labels, a conditional expression or a colon.
+Select specific rows and/or columns using loc when using the row and column names
+Select specific rows and/or columns using iloc when using the positions in the table
+You can assign new values to a selection based on loc/iloc.
+'''
+using_loc_operator=df.loc[df['yearID']>2000].values
+using_iloc_operator=df.iloc[:30,:3]
