@@ -1,0 +1,65 @@
+
+#https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/01_table_oriented.html
+
+
+import pandas as pd
+
+#creating manual dataframe
+df=pd.DataFrame({
+    'Name':["Anshu kr singh",
+            'Raghvan raj',
+            'Mandip solanki',
+            'Rajendra verma'],
+    'Roll no':[1713313022,
+               1713313089,
+               1714413098,
+               1713312076],
+    'college':['Niet','Niet','Niet','Niet'],
+    'branch':['IT','CSE','ME','BIOTECH']})
+#some normal functions on dataframe/Series(columns)
+#use parenthisis in methods only,don't use in attributes
+datatype=df.dtypes#attributes
+describe=df.describe()#methods
+df.info()#methods
+head=df.head()#methods
+tails=df.tail()#methods
+age=pd.Series([23,23,44,56],index=['a','b','c','d'])
+#concating the rows(axis=0)/columns(axis=1) in dataframe
+df1=pd.DataFrame({'Age':[22,20,21,23],
+                  'Gender':['M','F','M','M']},index=[0,1,2,3])
+concat=pd.concat([df,df1],axis=1)
+#appending row value in concat dataframe
+row=pd.DataFrame([['Rajesh Arora',1713313097,'Niet','IT',19,'O']],index=[5],
+                 columns=['Name','Roll no','college','branch','Age','Gender'])
+concat=concat.append(row)
+#concating two dataframe
+df2=pd.DataFrame({
+    'Name':["Aditi sharma",
+            'Meeera devi',
+            'Rajdip sardesai',
+            'Arjun rajput'],
+    'Roll no':[1713313032,
+               1713313099,
+               1714413055,
+               1713312043],
+    'college':['Niet','Niet','Niet','Niet'],
+    'branch':['IT','CSE','ME','BIOTECH']},index=[4,5,6,7])
+concat1=pd.concat([df,df2],axis=0)
+
+#Indexing
+#indexing can be done by manually as by columns
+col=concat1['Roll no']
+col1=concat1['Roll no'] >1713313033
+#indexing by loc/iloc operator
+'''Apart from direct indexing, a DataFrame object also contains the loc and iloc 
+properties for indexing.
+We use iloc to access rows based on their integer index. Using iloc we can access 
+a single row as a Series, and specify particular rows to access through a list of
+integers or a boolean array.'''
+col2=concat1.iloc[:4,2:]
+col3=concat1.iloc[:,:2]
+'''The loc property provides the same row indexing functionality as iloc, 
+but uses row labels rather than integer indexes. Furthermore, with loc we 
+can perform column indexing along with row indexing, and set new values in 
+a DataFrame for specific rows and columns.'''
+col4=concat1.loc[concat1['Roll no']]
