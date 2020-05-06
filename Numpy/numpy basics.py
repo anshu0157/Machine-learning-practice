@@ -1,25 +1,9 @@
-
-# # NUMPY MODULE
-
-# In[1]:
-
-
 import numpy as np
-
-
-# In[16]:
-
-
 #if there is mixed type elements in array then in numpy array all elements converted into highest dtype order
 a=[2,3,4,'d',0,8]
 b=[2,3,4,9.0,8.99]
 print(repr(np.array(a)))#all converted into string
 print(repr(np.array(b)))#all converted into float
-
-
-# In[22]:
-
-
 #copying
 a=np.array([2,3,4,5,6,7])
 b=a#if we change the value in b then value of a will be changed to
